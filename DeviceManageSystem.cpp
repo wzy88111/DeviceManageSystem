@@ -12,7 +12,7 @@ Dialog::Dialog(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //init();
+    init();
 }
 
 Dialog::~Dialog()
@@ -25,6 +25,7 @@ void Dialog::init()
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
 
     bool not_exsist = false;
+
     QString file_name =QApplication::applicationDirPath() + "/config.db";
     QFile file(file_name);
     if(!file.exists())
@@ -35,10 +36,27 @@ void Dialog::init()
         not_exsist = true;
     }
 
-    //db.setDatabaseName(file_name);
-    //if (!db.open())
+    db.setDatabaseName(file_name);
+    if (!db.open())
     {
-           // return ;
+        return ;
+    }
+
+    if(not_exsist)
+    {
+        QString create_table_sql = "CREATE TABLE devices (" \
+                                   "id VARCHAR(40) PRIMARY KEY," \
+                                   "type VARCHAR(40) NOT NULL," \
+                                   "name VARCHAR(40) NOT NULL," \
+                                   "buy_time VARCHAR(40) NOT NULL," \
+                                   "is_scrap INTEGER NOT NULL," \
+                                   "scrap_time VARCHAR(40) NOT NULL)" ;
+
+        QSqlQuery query;
+        bool ret = query.exec(create_table_sql);
+        if( !ret ){
+            return ;
+        }
     }
 
 
