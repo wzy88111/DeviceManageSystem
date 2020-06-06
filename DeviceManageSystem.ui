@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
-    <height>431</height>
+    <width>700</width>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,9 +20,9 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>100</y>
-     <width>451</width>
-     <height>321</height>
+     <y>110</y>
+     <width>471</width>
+     <height>311</height>
     </rect>
    </property>
    <property name="horizontalScrollBarPolicy">
@@ -40,6 +40,9 @@
    <property name="selectionBehavior">
     <enum>QAbstractItemView::SelectRows</enum>
    </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideMiddle</enum>
+   </property>
    <property name="horizontalScrollMode">
     <enum>QAbstractItemView::ScrollPerPixel</enum>
    </property>
@@ -50,7 +53,7 @@
     <bool>false</bool>
    </attribute>
    <attribute name="horizontalHeaderDefaultSectionSize">
-    <number>75</number>
+    <number>77</number>
    </attribute>
    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
     <bool>false</bool>
@@ -58,44 +61,17 @@
    <attribute name="horizontalHeaderStretchLastSection">
     <bool>false</bool>
    </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
    <attribute name="verticalHeaderShowSortIndicator" stdset="0">
     <bool>false</bool>
    </attribute>
-   <column>
-    <property name="text">
-     <string>编号</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>种类</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>名称</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>购入日期</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>是否报废</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>报废日期</string>
-    </property>
-   </column>
   </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>470</x>
+     <x>490</x>
      <y>10</y>
      <width>181</width>
      <height>301</height>
@@ -104,12 +80,12 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>161</width>
+      <width>166</width>
       <height>301</height>
      </rect>
     </property>
@@ -220,7 +196,7 @@
        <item>
         <widget class="QPushButton" name="m_ok">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="text">
           <string>确定</string>
@@ -235,23 +211,23 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>19</x>
+     <y>9</y>
      <width>451</width>
-     <height>81</height>
+     <height>91</height>
     </rect>
    </property>
    <property name="title">
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>21</x>
-     <y>21</y>
+     <x>30</x>
+     <y>20</y>
      <width>425</width>
-     <height>58</height>
+     <height>82</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -320,6 +296,19 @@
      </layout>
     </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="m_query_result">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>340</y>
+     <width>171</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>
